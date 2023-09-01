@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- SCRIPT MY JAVASCRIPT -->
+    <script src="./js/data.js"></script>
     <script src="./js/main.js" defer></script>
   </head>
   <body>
@@ -80,38 +81,41 @@
             </div>
           </div>
 
+          <!-- Search Contact -->
+          <div class="input-group p-2 search-contact">
+            <button
+              class="btn btn-outline-secondary btn-col"
+              type="button"
+              id="button-addon1"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Cerca o inizia una nuova chat"
+              aria-label="Example text with button addon"
+              aria-describedby="button-addon1"
+            />
+          </div>
+
           <!-- Container Contact List -->
           <aside class="container-list-contact">
-            <!-- Search Contact -->
-            <div class="input-group p-2">
-              <button
-                class="btn btn-outline-secondary btn-col"
-                type="button"
-                id="button-addon1"
-              >
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Cerca o inizia una nuova chat"
-                aria-label="Example text with button addon"
-                aria-describedby="button-addon1"
-              />
-            </div>
-
             <!-- List Contact -->
-            <ul class="list-group list-contact">
+            <ul
+              class="list-group list-contact"
+              v-for="(contact, index) in contacts"
+            >
               <!-- Contact -->
               <li class="list-group-item contact">
                 <!-- Avatar Contact -->
                 <div class="avatar-contact">
-                  <img src="./img/avatar_1.jpg" alt="" />
+                  <img :src="contact.avatar" alt="" />
                 </div>
                 <!-- Chat Contact -->
                 <div class="flex-grow-1">
                   <div>
-                    <span> Michele </span>
+                    <span> {{contact.name}} </span>
                   </div>
                   <div>
                     <span class="fw-light text-secondary"

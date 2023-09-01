@@ -6,7 +6,11 @@
 
   --height-nav: 70px;
   --height-alert: 60px;
-  --height-contacts: calc(100vh - var(--height-nav) - var(--height-alert));
+  --height-search-contact: 54px;
+  --height-contacts: calc(
+    100vh - var(--height-nav) - var(--height-alert) -
+      var(--height-search-contact)
+  );
   --height-chat: calc(100vh - (var(--height-nav) * 2));
 
   --color-icons-grey: #b1b1b1;
@@ -105,6 +109,13 @@ body {
 .alert-notification .link-notification {
   font-size: 0.8rem;
   text-decoration: underline;
+}
+
+/* Search Contact */
+
+.aside-content .search-contact {
+  height: var(--height-search-contact);
+  background-color: white;
 }
 
 /* List Contact */
