@@ -133,14 +133,21 @@ body {
 
 .list-contact > .contact {
   display: flex;
+  justify-content: space-around;
   gap: 0.5rem;
 }
 
 .contact > .avatar-contact {
   width: 60px;
+  height: 60px;
+
   border-radius: 50%;
 
   overflow: hidden;
+}
+
+.contact .chat-contact {
+  width: 250px;
 }
 
 .contact .time-message {

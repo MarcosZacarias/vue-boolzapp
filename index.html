@@ -102,25 +102,22 @@
           <!-- Container Contact List -->
           <aside class="container-list-contact">
             <!-- List Contact -->
-            <ul
-              class="list-group list-contact"
-              v-for="(contact, index) in contacts"
-            >
+            <ul class="list-group list-contact">
               <!-- Contact -->
-              <li class="list-group-item contact" @click="selectChat(index)">
+              <li
+                class="list-group-item contact"
+                v-for="(contact, index) in contacts"
+                @click="selectChat(index)"
+              >
                 <!-- Avatar Contact -->
                 <div class="avatar-contact">
                   <img :src="contact.avatar" alt="" />
                 </div>
                 <!-- Chat Contact -->
-                <div class="flex-grow-1 overflow-hidden">
-                  <div>
-                    <span> {{contact.name}} </span>
-                  </div>
-                  <div class="">
-                    <span class="fw-light text-secondary"
-                      >{{lastMessage(contact,index)}}</span
-                    >
+                <div class="chat-contact">
+                  <div>{{contact.name}}</div>
+                  <div class="fw-light text-secondary overflow-hidden">
+                    {{lastMessage(contact,index)}}
                   </div>
                 </div>
                 <!-- Time Contact -->
