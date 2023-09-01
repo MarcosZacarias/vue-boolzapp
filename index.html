@@ -121,11 +121,7 @@
                   </div>
                 </div>
                 <!-- Time Contact -->
-                <div>
-                  <span class="text-secondary fw-light time-message"
-                    >12:00</span
-                  >
-                </div>
+                <div class="time-message">12:00</div>
               </li>
             </ul>
           </aside>
@@ -176,7 +172,10 @@
                 v-for="(message,index) in contacts[activeChat].messages"
               >
                 <li class="message" :class="`message-` + message.status">
-                  {{message.message}}
+                  <div>{{message.message}}</div>
+                  <div class="time-message d-flex justify-content-end">
+                    {{message.date}}
+                  </div>
                 </li>
               </ul>
             </div>

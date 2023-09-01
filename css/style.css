@@ -150,8 +150,11 @@ body {
   width: 250px;
 }
 
-.contact .time-message {
+.time-message {
+  font-weight: lighter;
   font-size: 0.8rem;
+
+  color: #747679;
 }
 
 /* *Main Content */
