@@ -4,10 +4,15 @@ createApp({
   data() {
     return {
       contacts,
+      activeChat: 0,
     };
   },
 
-  methods: {},
+  methods: {
+    selectChat(index) {
+      this.activeChat = index;
+    },
+  },
 
   created() {
     console.log(this.contacts);

@@ -107,7 +107,7 @@
               v-for="(contact, index) in contacts"
             >
               <!-- Contact -->
-              <li class="list-group-item contact">
+              <li class="list-group-item contact" @click="selectChat(index)">
                 <!-- Avatar Contact -->
                 <div class="avatar-contact">
                   <img :src="contact.avatar" alt="" />
@@ -140,12 +140,12 @@
           <nav class="nav-bar">
             <!-- Photo Utent -->
             <div class="avatar-nav-bar">
-              <img src="./img/avatar_1.jpg" alt="" />
+              <img :src="contacts[activeChat].avatar" alt="" />
             </div>
             <!-- Name Utent -->
             <div class="flex-grow-1">
               <div>
-                <span> Michele </span>
+                <span> {{contacts[activeChat].name}} </span>
               </div>
               <div>
                 <span class="fw-light text-secondary"
@@ -174,14 +174,13 @@
           <!-- Container chat -->
           <main class="container-chat">
             <div class="container">
-              <ul class="chat">
-                <li class="message message-send">
-                  Hai portato a spasso il cane?
+              <ul
+                class="chat"
+                v-for="(message,index) in contacts[activeChat].messages"
+              >
+                <li class="message" :class="`message-` + message.status">
+                  {{message.message}}
                 </li>
-                <li class="message message-send">
-                  Ricordati di stendere in panni
-                </li>
-                <li class="message message-received">Tutto fatto!</li>
               </ul>
             </div>
           </main>

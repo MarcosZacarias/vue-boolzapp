@@ -180,7 +180,7 @@ body {
   border-radius: 10px;
 }
 
-.chat > .message.message-send {
+.chat > .message.message-sent {
   align-self: flex-end;
   background-color: #d5f9ba;
 }
