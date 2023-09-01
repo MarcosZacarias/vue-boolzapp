@@ -113,13 +113,13 @@
                   <img :src="contact.avatar" alt="" />
                 </div>
                 <!-- Chat Contact -->
-                <div class="flex-grow-1">
+                <div class="flex-grow-1 overflow-hidden">
                   <div>
                     <span> {{contact.name}} </span>
                   </div>
-                  <div>
+                  <div class="">
                     <span class="fw-light text-secondary"
-                      >Ultimo messaggio inviato</span
+                      >{{lastMessage(contact,index)}}</span
                     >
                   </div>
                 </div>
