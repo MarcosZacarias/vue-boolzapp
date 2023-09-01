@@ -16,6 +16,15 @@
       crossorigin="anonymous"
     />
 
+    <!-- LINK ICONS FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- LINK MY CSS -->
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -24,7 +33,182 @@
   </head>
   <body>
     <!-- DIV VUE.JS -->
-    <div id="app"></div>
+    <div id="app">
+      <div class="container my-3 wrapper">
+        <!-- Aside Content -->
+        <div class="aside-content">
+          <!-- Aside Nav Bar  -->
+          <nav class="nav-bar">
+            <!-- Photo Utent -->
+            <div class="avatar-nav-bar">
+              <img src="./img/avatar_io.jpg" alt="" />
+            </div>
+            <!-- Name Utent -->
+            <div class="flex-grow-1">
+              <span> Sonia </span>
+            </div>
+            <!-- Icons -->
+            <div class="color-icon">
+              <a href="#">
+                <i class="fa-solid fa-circle-notch"></i>
+              </a>
+            </div>
+            <div class="color-icon">
+              <a href="#">
+                <i class="fa-solid fa-message"></i>
+              </a>
+            </div>
+            <div class="color-icon">
+              <a href="#">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </a>
+            </div>
+          </nav>
+
+          <!-- Alert Notification -->
+          <div class="alert-notification">
+            <div class="alert-icon">
+              <a href="#">
+                <i class="fa-solid fa-bell-slash fa-lg"></i>
+              </a>
+            </div>
+            <div>
+              <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+              <a href="#" class="link-notification text-secondary"
+                >Attiva notifiche desktop</a
+              >
+            </div>
+          </div>
+
+          <!-- Container Contact List -->
+          <aside class="container-list-contact">
+            <!-- Search Contact -->
+            <div class="input-group p-2">
+              <button
+                class="btn btn-outline-secondary btn-col"
+                type="button"
+                id="button-addon1"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Cerca o inizia una nuova chat"
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+            </div>
+
+            <!-- List Contact -->
+            <ul class="list-group list-contact">
+              <!-- Contact -->
+              <li class="list-group-item contact">
+                <!-- Avatar Contact -->
+                <div class="avatar-contact">
+                  <img src="./img/avatar_1.jpg" alt="" />
+                </div>
+                <!-- Chat Contact -->
+                <div class="flex-grow-1">
+                  <div>
+                    <span> Michele </span>
+                  </div>
+                  <div>
+                    <span class="fw-light text-secondary"
+                      >Ultimo messaggio inviato</span
+                    >
+                  </div>
+                </div>
+                <!-- Time Contact -->
+                <div>
+                  <span class="text-secondary fw-light time-message"
+                    >12:00</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+          <!-- Main Navbar -->
+          <nav class="nav-bar">
+            <!-- Photo Utent -->
+            <div class="avatar-nav-bar">
+              <img src="./img/avatar_1.jpg" alt="" />
+            </div>
+            <!-- Name Utent -->
+            <div class="flex-grow-1">
+              <div>
+                <span> Michele </span>
+              </div>
+              <div>
+                <span class="fw-light text-secondary"
+                  >Ultimo accesso oggi alle 12:00</span
+                >
+              </div>
+            </div>
+            <!-- Icons -->
+            <div class="color-icon">
+              <a href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </div>
+            <div class="color-icon">
+              <a href="#">
+                <i class="fa-solid fa-paperclip"></i>
+              </a>
+            </div>
+            <div class="color-icon">
+              <a href="#">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </a>
+            </div>
+          </nav>
+
+          <!-- Container chat -->
+          <main class="container-chat">
+            <div class="container">
+              <ul class="chat">
+                <li class="message message-send">
+                  Hai portato a spasso il cane?
+                </li>
+                <li class="message message-send">
+                  Ricordati di stendere in panni
+                </li>
+                <li class="message message-received">Tutto fatto!</li>
+              </ul>
+            </div>
+          </main>
+
+          <!-- Input Message -->
+          <div class="nav-bar-message">
+            <div>
+              <a href="#">
+                <i class="fa-regular fa-face-smile fa-xl"></i>
+              </a>
+            </div>
+            <div class="flex-grow-1">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Scrivi un messaggio"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+            <div>
+              <a href="#">
+                <i class="fa-solid fa-microphone fa-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- SCRIPT BOOTSTRAP JAVASCRIPT -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
