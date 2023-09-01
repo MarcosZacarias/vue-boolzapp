@@ -191,11 +191,13 @@
             <div class="flex-grow-1">
               <div class="input-group">
                 <input
+                  v-model="newMessage.message"
                   type="text"
                   class="form-control"
                   placeholder="Scrivi un messaggio"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  @keyup.enter="sendNewMessage()"
                 />
               </div>
             </div>

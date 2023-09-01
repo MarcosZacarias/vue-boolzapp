@@ -5,6 +5,11 @@ createApp({
     return {
       contacts,
       activeChat: 0,
+      newMessage: {
+        date: "",
+        message: "",
+        status: "sent",
+      },
     };
   },
 
@@ -15,10 +20,18 @@ createApp({
 
     lastMessage(contact, index) {
       let lastMessage = contact.messages[contact.messages.length - 1];
-      console.log(lastMessage);
+      // console.log(lastMessage);
       let lastMessageText = lastMessage.message;
-      console.log(lastMessageText);
+      // console.log(lastMessageText);
       return lastMessageText;
+    },
+
+    sendNewMessage() {
+      const newMessage = { ...this.newMessage };
+      console.log(newMessage);
+      this.contacts[this.activeChat].messages.push(newMessage);
+
+      this.newMessage.message = "";
     },
   },
 
