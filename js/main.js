@@ -90,6 +90,20 @@ createApp({
         }
       }
     },
+
+    deleteMessage(messageEliminate, index) {
+      // console.log(message);
+
+      const result = this.contacts[this.activeChat].messages.filter(
+        (message) => message != messageEliminate
+      );
+
+      console.log(result);
+
+      this.contacts[this.activeChat].messages = result;
+
+      // return this.contacts[this.activeChat].messages;
+    },
   },
 
   created() {

@@ -214,6 +214,12 @@ body {
   border-radius: 10px;
 }
 
+.chat .option-message {
+  color: #747679;
+  background-color: transparent;
+  float: right;
+}
+
 .chat > .message.message-sent {
   align-self: flex-end;
   background-color: #d5f9ba;

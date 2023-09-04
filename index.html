@@ -178,9 +178,27 @@
                 v-for="(message,index) in contacts[activeChat].messages"
               >
                 <li class="message" :class="`message-` + message.status">
-                  <div>{{message.message}}</div>
-                  <div class="time-message d-flex justify-content-end">
-                    {{timeMessage(message.date)}}
+                  <div class="dropdown">
+                    <button
+                      class="btn dropdown-toggle option-message"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    ></button>
+
+                    <div>{{message.message}}</div>
+                    <div class="time-message d-flex justify-content-end">
+                      {{timeMessage(message.date)}}
+                    </div>
+
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Message Info</a>
+                      </li>
+                      <li @click="deleteMessage(message, index)">
+                        <a class="dropdown-item" href="#">Delete message</a>
+                      </li>
+                    </ul>
                   </div>
                 </li>
               </ul>
