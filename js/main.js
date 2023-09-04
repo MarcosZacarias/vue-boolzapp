@@ -30,11 +30,16 @@ createApp({
     sendNewMessage() {
       const newMessage = { ...this.newMessage };
       console.log(newMessage);
+
+      newMessage.date = this.timeNow();
       this.contacts[this.activeChat].messages.push(newMessage);
 
       this.newMessage.message = "";
 
       setTimeout(this.autoMessage, 1000);
+
+      const timeString = this.contacts[0].messages[0].date;
+      console.log(timeString);
     },
 
     autoMessage() {
@@ -42,9 +47,17 @@ createApp({
         const autoMessage = { ...this.newMessage };
         autoMessage.message = "Ok";
         autoMessage.status = "received";
+        autoMessage.date = this.timeNow();
         console.log(autoMessage);
         this.contacts[this.activeChat].messages.push(autoMessage);
       }
+    },
+
+    timeNow() {
+      const d = new Date();
+      let hour = d.getHours();
+      let minutes = d.getMinutes();
+      return hour + ":" + minutes;
     },
 
     filterChat() {
@@ -66,6 +79,7 @@ createApp({
 
   created() {
     // console.log(this.contacts);
+    // console.log(this.contacts[0].message[0].date);
   },
 
   conputed() {
