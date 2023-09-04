@@ -87,10 +87,12 @@
               class="btn btn-outline-secondary btn-col"
               type="button"
               id="button-addon1"
+              @click="filterChat()"
             >
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <input
+              v-model="searchChat"
               type="text"
               class="form-control"
               placeholder="Cerca o inizia una nuova chat"
@@ -108,7 +110,7 @@
                 class="list-group-item contact"
                 v-for="(contact, index) in contacts"
                 @click="selectChat(index)"
-                :class="(index == activeChat)  ? `contact-active` : `` "
+                :class="(contact.visible)  ? `` : `d-none` "
               >
                 <!-- Avatar Contact -->
                 <div class="avatar-contact">

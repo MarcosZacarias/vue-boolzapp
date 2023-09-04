@@ -85,7 +85,7 @@ body {
 /* *Aside Content */
 
 .container > .aside-content {
-  width: var(--width-aside-content);
+  min-width: var(--width-aside-content);
 }
 
 /* Nav Bar */

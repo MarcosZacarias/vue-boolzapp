@@ -5,6 +5,7 @@ createApp({
     return {
       contacts,
       activeChat: 0,
+      searchChat: "",
       newMessage: {
         date: "",
         message: "",
@@ -43,6 +44,22 @@ createApp({
         autoMessage.status = "received";
         console.log(autoMessage);
         this.contacts[this.activeChat].messages.push(autoMessage);
+      }
+    },
+
+    filterChat() {
+      console.log(this.searchChat);
+      const nameFilter =
+        this.searchChat.charAt(0).toUpperCase() + this.searchChat.slice(1);
+
+      // console.log(nameFilter);
+      for (const contact of this.contacts) {
+        console.log(contact);
+        if (!contact.name.includes(nameFilter)) {
+          contact.visible = false;
+          console.log(contact.visible);
+          console.log("Ciao");
+        }
       }
     },
   },
