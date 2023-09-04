@@ -31,7 +31,7 @@ createApp({
       let lastMessage = contact.messages[contact.messages.length - 1];
       // console.log(lastMessage);
       let lastMessageDate = lastMessage.date;
-      console.log(lastMessageDate);
+      // console.log(lastMessageDate);
       let lastMessageTime = this.timeMessage(lastMessageDate);
       return lastMessageTime;
     },
@@ -41,7 +41,7 @@ createApp({
       console.log(newMessage);
 
       const dateNow = new Date();
-      console.log(dateNow);
+      // console.log(dateNow);
       newMessage.date = this.timeMessage(dateNow);
 
       this.contacts[this.activeChat].messages.push(newMessage);
@@ -57,14 +57,14 @@ createApp({
         autoMessage.message = "Ok";
         autoMessage.status = "received";
         autoMessage.date = this.timeMessage(Date());
-        console.log(autoMessage);
+        // console.log(autoMessage);
         this.contacts[this.activeChat].messages.push(autoMessage);
       }
     },
 
     timeMessage(date) {
       const d = new Date(date);
-      console.log(d);
+      // console.log(d);
 
       const year = d.getFullYear();
       const month = d.getMonth() + 1;
