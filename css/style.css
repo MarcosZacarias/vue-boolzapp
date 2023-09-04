@@ -2,7 +2,7 @@
 
 :root {
   --width-aside-content: 400px;
-  --width-main-content: calc(100% - var(--width-aside-content));
+  --width-main-content: 1100px;
 
   --height-nav: 70px;
   --height-alert: 60px;
@@ -39,11 +39,23 @@ a:hover {
 
 /* *Layout */
 body {
-  background-color: rgba(79, 79, 79, 0.44);
+  background: linear-gradient(
+    to bottom,
+    #009688 15vh,
+    #dcdbd0 15vh,
+    #d1dbda 100vh
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
 }
 
 .container.wrapper {
   display: flex;
+  min-width: 800px;
 }
 
 .nav-bar {
