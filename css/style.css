@@ -147,6 +147,8 @@ body {
   display: flex;
   justify-content: space-around;
   gap: 0.5rem;
+
+  cursor: pointer;
 }
 
 .contact > .avatar-contact {
