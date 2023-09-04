@@ -125,7 +125,9 @@
                   </div>
                 </div>
                 <!-- Time Contact -->
-                <div class="time-message">12:00</div>
+                <div class="time-message">
+                  {{lastMessageTime(contact,index)}}
+                </div>
               </li>
             </ul>
           </aside>
@@ -178,7 +180,7 @@
                 <li class="message" :class="`message-` + message.status">
                   <div>{{message.message}}</div>
                   <div class="time-message d-flex justify-content-end">
-                    {{message.date}}
+                    {{timeMessage(message.date)}}
                   </div>
                 </li>
               </ul>

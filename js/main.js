@@ -27,19 +27,28 @@ createApp({
       return lastMessageText;
     },
 
+    lastMessageTime(contact, index) {
+      let lastMessage = contact.messages[contact.messages.length - 1];
+      // console.log(lastMessage);
+      let lastMessageDate = lastMessage.date;
+      console.log(lastMessageDate);
+      let lastMessageTime = this.timeMessage(lastMessageDate);
+      return lastMessageTime;
+    },
+
     sendNewMessage() {
       const newMessage = { ...this.newMessage };
       console.log(newMessage);
 
-      newMessage.date = this.timeNow();
+      const dateNow = new Date();
+      console.log(dateNow);
+      newMessage.date = this.timeMessage(dateNow);
+
       this.contacts[this.activeChat].messages.push(newMessage);
 
       this.newMessage.message = "";
 
       setTimeout(this.autoMessage, 1000);
-
-      const timeString = this.contacts[0].messages[0].date;
-      console.log(timeString);
     },
 
     autoMessage() {
@@ -47,17 +56,23 @@ createApp({
         const autoMessage = { ...this.newMessage };
         autoMessage.message = "Ok";
         autoMessage.status = "received";
-        autoMessage.date = this.timeNow();
+        autoMessage.date = this.timeMessage(Date());
         console.log(autoMessage);
         this.contacts[this.activeChat].messages.push(autoMessage);
       }
     },
 
-    timeNow() {
-      const d = new Date();
+    timeMessage(date) {
+      const d = new Date(date);
+      console.log(d);
+
+      const year = d.getFullYear();
+      const month = d.getMonth() + 1;
+      const day = d.getDate();
       let hour = d.getHours();
       let minutes = d.getMinutes();
-      return hour + ":" + minutes;
+
+      return day + "/" + month + "/" + year + " " + hour + ":" + minutes;
     },
 
     filterChat() {
