@@ -32,6 +32,18 @@ createApp({
       this.contacts[this.activeChat].messages.push(newMessage);
 
       this.newMessage.message = "";
+
+      setTimeout(this.autoMessage, 1000);
+    },
+
+    autoMessage() {
+      if (this.sendNewMessage) {
+        const autoMessage = { ...this.newMessage };
+        autoMessage.message = "Ok";
+        autoMessage.status = "received";
+        console.log(autoMessage);
+        this.contacts[this.activeChat].messages.push(autoMessage);
+      }
     },
   },
 
@@ -41,5 +53,6 @@ createApp({
 
   conputed() {
     this.lastMessage();
+    this.autoMessage();
   },
 }).mount("#app");
