@@ -162,6 +162,14 @@ body {
   width: 250px;
 }
 
+.contact-active {
+  background-color: #e9ebeb;
+}
+
+.contact:hover {
+  background-color: #e9ebeb;
+}
+
 .time-message {
   font-weight: lighter;
   font-size: 0.8rem;

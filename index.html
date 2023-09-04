@@ -108,6 +108,7 @@
                 class="list-group-item contact"
                 v-for="(contact, index) in contacts"
                 @click="selectChat(index)"
+                :class="(index == activeChat)  ? `contact-active` : `` "
               >
                 <!-- Avatar Contact -->
                 <div class="avatar-contact">
@@ -116,7 +117,7 @@
                 <!-- Chat Contact -->
                 <div class="chat-contact">
                   <div>{{contact.name}}</div>
-                  <div class="fw-light text-secondary overflow-hidden">
+                  <div class="fw-light overflow-hidden">
                     {{lastMessage(contact,index)}}
                   </div>
                 </div>
