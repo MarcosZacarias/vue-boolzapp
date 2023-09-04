@@ -77,17 +77,14 @@ createApp({
 
     filterChat() {
       console.log(this.searchChat);
-      const nameFilter =
-        this.searchChat.charAt(0).toUpperCase() + this.searchChat.slice(1);
+      const nameFilter = this.searchChat.toLowerCase();
+      console.log(nameFilter);
 
-      // console.log(nameFilter);
       for (const contact of this.contacts) {
-        console.log(contact);
-        if (!contact.name.includes(nameFilter)) {
-          contact.visible = false;
-          console.log(contact.visible);
-          console.log("Ciao");
-        }
+        const nameContact = contact.name.toLowerCase();
+        nameContact.includes(nameFilter)
+          ? (contact.visible = true)
+          : (contact.visible = false);
       }
     },
 
