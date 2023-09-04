@@ -194,6 +194,8 @@ body {
 }
 
 .chat > .message {
+  max-width: 60%;
+
   background-color: #ffffff;
   padding: 0.8rem;
 
