@@ -1,3 +1,5 @@
+var DateTime = luxon.DateTime;
+
 const { createApp } = Vue;
 
 createApp({
@@ -47,9 +49,7 @@ createApp({
       const newMessage = { ...this.newMessage };
       console.log(newMessage);
 
-      const dateNow = new Date();
-      // console.log(dateNow);
-      newMessage.date = this.timeMessage(dateNow);
+      newMessage.date = this.printTimeNow();
 
       this.contacts[this.activeChat].messages.push(newMessage);
 
@@ -63,23 +63,19 @@ createApp({
         const autoMessage = { ...this.newMessage };
         autoMessage.message = "Ok";
         autoMessage.status = "received";
-        autoMessage.date = this.timeMessage(Date());
+
+        autoMessage.date = this.printTimeNow();
         // console.log(autoMessage);
         this.contacts[this.activeChat].messages.push(autoMessage);
       }
     },
 
     timeMessage(date) {
-      const d = new Date(date);
-      // console.log(d);
-
-      const year = d.getFullYear();
-      const month = d.getMonth() + 1;
-      const day = d.getDate();
-      let hour = d.getHours();
-      let minutes = d.getMinutes();
-
-      return day + "/" + month + "/" + year + " " + hour + ":" + minutes;
+      const msgDateTime = DateTime.fromFormat(date, "dd/MM/yyyy HH:mm:ss", {
+        locale: "it-IT",
+      });
+      // console.log(msgDateTime);
+      return msgDateTime.toLocaleString(DateTime.DATETIME_MED);
     },
 
     filterChat() {
@@ -100,6 +96,12 @@ createApp({
     deleteMessage(chat, index) {
       const messageEliminate = chat[index];
       chat.splice(index, 1);
+    },
+
+    printTimeNow() {
+      const dt = DateTime.now();
+      const msgTime = dt.toFormat("dd/MM/yyyy HH:mm:ss");
+      return msgTime;
     },
   },
 
