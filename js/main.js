@@ -78,6 +78,12 @@ createApp({
       return msgDateTime.toLocaleString(DateTime.DATETIME_MED);
     },
 
+    printTimeNow() {
+      const dt = DateTime.now();
+      const msgTime = dt.toFormat("dd/MM/yyyy HH:mm:ss");
+      return msgTime;
+    },
+
     filterChat() {
       console.log(this.searchChat);
       const nameFilter = this.searchChat.toLowerCase();
@@ -90,18 +96,12 @@ createApp({
           : (contact.visible = false);
       }
 
-      this.searchChat = "";
+      // this.searchChat = "";
     },
 
     deleteMessage(chat, index) {
       const messageEliminate = chat[index];
       chat.splice(index, 1);
-    },
-
-    printTimeNow() {
-      const dt = DateTime.now();
-      const msgTime = dt.toFormat("dd/MM/yyyy HH:mm:ss");
-      return msgTime;
     },
   },
 
