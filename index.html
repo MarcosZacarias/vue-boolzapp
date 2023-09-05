@@ -115,20 +115,22 @@
                 @click="selectChat(index)"
                 :class="(contact.visible)  ? `` : `d-none` "
               >
-                <!-- Avatar Contact -->
-                <div class="avatar-contact">
-                  <img :src="contact.avatar" alt="" />
-                </div>
-                <!-- Chat Contact -->
-                <div class="chat-contact">
-                  <div>{{contact.name}}</div>
-                  <div class="fw-light overflow-hidden">
-                    {{lastMessage(contact,index)}}
+                <div class="row justify-content-between">
+                  <!-- Avatar Contact -->
+                  <div class="col-2 avatar-contact">
+                    <img :src="contact.avatar" alt="" />
                   </div>
-                </div>
-                <!-- Time Contact -->
-                <div class="time-message">
-                  {{lastMessageTime(contact,index)}}
+                  <!-- Chat Contact -->
+                  <div class="col-7 chat-contact">
+                    <div>{{contact.name}}</div>
+                    <div class="fw-light overflow-hidden">
+                      {{lastMessage(contact,index)}}
+                    </div>
+                  </div>
+                  <!-- Time Contact -->
+                  <div class="col-3 time-message">
+                    {{lastMessageTime(contact,index)}}
+                  </div>
                 </div>
               </li>
             </ul>

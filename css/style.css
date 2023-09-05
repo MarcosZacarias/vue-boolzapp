@@ -151,10 +151,7 @@ body {
   cursor: pointer;
 }
 
-.contact > .avatar-contact {
-  width: 60px;
-  height: 60px;
-
+.avatar-contact > img {
   border-radius: 50%;
 
   overflow: hidden;
