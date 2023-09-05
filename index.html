@@ -187,6 +187,7 @@
                     ></button>
 
                     <div>{{message.message}}</div>
+
                     <div class="time-message d-flex justify-content-end">
                       {{timeMessage(message.date)}}
                     </div>
@@ -195,7 +196,9 @@
                       <li>
                         <a class="dropdown-item" href="#">Message Info</a>
                       </li>
-                      <li @click="deleteMessage(message, index)">
+                      <li
+                        @click="deleteMessage(contacts[activeChat].messages, index)"
+                      >
                         <a class="dropdown-item" href="#">Delete message</a>
                       </li>
                     </ul>
