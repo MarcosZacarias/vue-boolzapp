@@ -93,6 +93,8 @@ createApp({
           ? (contact.visible = true)
           : (contact.visible = false);
       }
+
+      this.searchChat = "";
     },
 
     deleteMessage(chat, index) {
