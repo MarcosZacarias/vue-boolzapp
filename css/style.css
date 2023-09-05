@@ -212,6 +212,7 @@ body {
   align-self: flex-start;
 
   border-radius: 10px;
+  word-wrap: break-word;
 }
 
 .chat .option-message {
