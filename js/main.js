@@ -22,18 +22,25 @@ createApp({
     lastMessage(contact, index) {
       let lastMessage = contact.messages[contact.messages.length - 1];
       // console.log(lastMessage);
-      let lastMessageText = lastMessage.message;
+      if (!lastMessage) {
+        return "Nessun messaggio nella chat";
+      } else {
+        let lastMessageText = lastMessage.message;
+        return lastMessageText;
+      }
       // console.log(lastMessageText);
-      return lastMessageText;
     },
 
     lastMessageTime(contact, index) {
       let lastMessage = contact.messages[contact.messages.length - 1];
-      // console.log(lastMessage);
-      let lastMessageDate = lastMessage.date;
-      // console.log(lastMessageDate);
-      let lastMessageTime = this.timeMessage(lastMessageDate);
-      return lastMessageTime;
+
+      if (!lastMessage) {
+        return "";
+      } else {
+        let lastMessageDate = lastMessage.date;
+        let lastMessageTime = this.timeMessage(lastMessageDate);
+        return lastMessageTime;
+      }
     },
 
     sendNewMessage() {
