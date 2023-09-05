@@ -1,8 +1,8 @@
 /** Root  */
 
 :root {
-  --width-aside-content: 400px;
-  --width-main-content: 1100px;
+  --width-aside-content: 40%;
+  --width-main-content: 60%;
 
   --height-nav: 70px;
   --height-alert: 60px;
@@ -55,7 +55,7 @@ body {
 
 .container.wrapper {
   display: flex;
-  min-width: 800px;
+  width: 1250px;
 }
 
 .nav-bar {
@@ -85,7 +85,7 @@ body {
 /* *Aside Content */
 
 .container > .aside-content {
-  min-width: var(--width-aside-content);
+  width: var(--width-aside-content);
 }
 
 /* Nav Bar */
