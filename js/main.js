@@ -103,13 +103,7 @@ createApp({
     },
   },
 
-  created() {
-    // console.log(this.contacts);
-    // console.log(this.contacts[0].message[0].date);
-  },
+  created() {},
 
-  conputed() {
-    this.lastMessage();
-    this.autoMessage();
-  },
+  computed: {},
 }).mount("#app");
